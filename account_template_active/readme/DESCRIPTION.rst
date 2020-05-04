@@ -26,11 +26,15 @@ module based on the official one, but with some removed / added / altered items.
 .. figure:: ../static/description/account_tax_template_tree.png
 
 For consistency reason,
+
 * if user disables an ``account.account.template`` it will disable the related
   ``account.fiscal.position.account.template``
+
 * if user disables an ``account.tax.template`` it will disable the related
   ``account.fiscal.position.tax.template``
+
 * if user enables an ``account.fiscal.position.account.template`` it will enable the
-  related ``account.account.template``.
+  related ``account.account.template``
+
 * if user enables an ``account.fiscal.position.tax.template`` it will enable the
-  related ``account.tax.template``.
+  related ``account.tax.template``
