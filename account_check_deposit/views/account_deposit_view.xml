@@ -40,7 +40,7 @@
                             <field name="journal_id"
                                    widget="selection"/>
                             <field name="journal_default_account_id"
-                                   invisible="1"/>
+                                invisible="1"/>
                             <field name="currency_id"
                                    groups="base.group_multi_currency"/>
                             <field name="bank_journal_id" widget="selection"/>
@@ -54,13 +54,13 @@
                             <field name="total_amount" widget="monetary"
                                    options="{'currency_field': 'currency_id'}"/>
                             <field name="move_id"/>
+                            <field name="is_reconcile"/>
                         </group>
                     </group>
                     <group string="Check Payments" name="check_payments">
                         <field name="check_payment_ids" nolabel="1"
                                widget="many2many"
                                domain="[('reconciled', '=', False),
-                                        ('debit', '>', 0),
                                         ('check_deposit_id', '=', False),
                                         ('currency_id', '=', currency_none_same_company_id),
                                         ('account_id', '=', journal_default_account_id)]"
