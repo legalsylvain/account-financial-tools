@@ -6,7 +6,7 @@
     "name": "Accounting Subsequences per Fiscal Years",
     "summary": "Allow to create sub sequences for account moves number, based"
     " on the fiscal years settings",
-    "version": "12.0.1.0.1",
+    "version": "12.0.1.0.0",
     "category": "Accounting",
     "author": "GRAP,Odoo Community Association (OCA)",
     "maintainers": ["legalsylvain"],
