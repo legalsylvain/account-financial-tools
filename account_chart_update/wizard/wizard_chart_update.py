@@ -71,6 +71,7 @@ class WizardUpdateChartsAccounts(models.TransientModel):
         comodel_name='wizard.update.charts.accounts.account',
         inverse_name='update_chart_wizard_id', string='Accounts',
         ondelete='cascade')
+    account_limit = fields.Integer("Account limit to search", default=0)
     fiscal_position_ids = fields.One2many(
         comodel_name='wizard.update.charts.accounts.fiscal.position',
         inverse_name='update_chart_wizard_id', string='Fiscal positions',
@@ -747,6 +748,9 @@ class WizardUpdateChartsAccounts(models.TransientModel):
                         'update_account_id': account_id,
                         'notes': notes,
                     })
+            if self.account_limit and len(self.account_ids) >= self.account_limit:
+                _logger.info(_("Exiting because of limit %d." % self.account_limit))
+                return
 
     @api.multi
     def _find_fiscal_positions(self):
